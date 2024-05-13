@@ -1,9 +1,9 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { Configuration } from 'webpack';
 import { buildLoaders } from './buildLoaders'
 import { buildResolvers } from './buildResolvers'
 import { buildPlugins } from './buildPlugins'
 import { IBuildOptions } from './types/config'
+import { buildDevServer } from './buildDevServer'
 
 export function buildWebpackConfig(options: IBuildOptions): Configuration {
 	const {mode, paths} = options
@@ -20,6 +20,8 @@ export function buildWebpackConfig(options: IBuildOptions): Configuration {
     	path: paths.build,
 			clean: true
 		},
-		plugins: buildPlugins(options)
+		plugins: buildPlugins(options),
+		devtool: options.isDev ? 'inline-source-map' : undefined,
+		devServer: options.isDev ? buildDevServer(options) : undefined,
 	}
 }
