@@ -1,7 +1,7 @@
 import { render } from 'react-dom'
-import './index.scss'
+import { App } from './App'
 
 render(
-	<div>Hello world from react</div>,
+	<App/>,
 	document.getElementById('root')
 )
