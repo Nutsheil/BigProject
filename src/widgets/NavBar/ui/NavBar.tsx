@@ -10,7 +10,6 @@ interface INavBar {
 export const NavBar = ({className}: INavBar) => {
 	return (
 		<div className={classNames(classes.Navbar, {}, className)}>
-			<ThemeSwitcher />
 			<div className={classes.links}>
 				<AppLink theme={AppLinkTheme.SECONDARY} to={'/'} className={classes.mainLink}>Home</AppLink>
 				<AppLink theme={AppLinkTheme.SECONDARY} to={'/About'}>About</AppLink>

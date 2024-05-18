@@ -1,4 +1,3 @@
-
 type modsType = Record<string, boolean>;
 
 export function classNames(cls: string, mods?: modsType, additional?: string | string[]): string {
