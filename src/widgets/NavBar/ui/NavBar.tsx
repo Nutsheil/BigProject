@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
-import { classNames } from 'shared/lib/classNames'
-import classes from './NavBar.module.scss'
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink'
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
+import { classNames } from 'shared/lib/classNames';
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import classes from './NavBar.module.scss';
 
 interface INavBar {
 	className?: string;
@@ -10,6 +10,7 @@ interface INavBar {
 export const NavBar = ({className}: INavBar) => {
 	return (
 		<div className={classNames(classes.Navbar, {}, className)}>
+			<ThemeSwitcher />
 			<div className={classes.links}>
 				<AppLink theme={AppLinkTheme.SECONDARY} to={'/'} className={classes.mainLink}>Home</AppLink>
 				<AppLink theme={AppLinkTheme.SECONDARY} to={'/About'}>About</AppLink>

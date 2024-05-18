@@ -3,6 +3,17 @@ import { RuleSetRule } from 'webpack'
 import { IBuildOptions } from './types/config'
 
 export function buildLoaders({isDev}: IBuildOptions): RuleSetRule[] {
+
+	const svgLoader: RuleSetRule = {
+		test: /\.svg$/,
+		use: ['@svgr/webpack'],
+	}
+
+	const fileLoader: RuleSetRule = {
+		test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+		use: 'file-loader',
+	};
+
 	const stylesLoader: RuleSetRule = {
 		test: /\.s[ac]ss$/i,
 		use: [
@@ -27,7 +38,9 @@ export function buildLoaders({isDev}: IBuildOptions): RuleSetRule[] {
 	};
 
 	return [
+		fileLoader,
+		svgLoader,
 		typeScriptLoader,
-		stylesLoader
+		stylesLoader,
 	]
 }
