@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -24,6 +25,11 @@ module.exports = {
   rules: {
     'no-tabs': ['error', { allowIndentationTabs: true }],
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
+    'max-len': ['warn', {
+      code: 120,
+      ignoreComments: true,
+      ignoreUrls: true,
+    }],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     // 'no-unused-vars': 'warn',
