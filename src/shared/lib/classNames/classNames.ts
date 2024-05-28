@@ -15,10 +15,6 @@ export function classNames(cls: string, mods?: modsType, additional?: string | s
       .map(([className]) => className);
   };
 
-  // const result = [cls];
-  // if (additional) result.push(...getAdditional());
-  // if (mods) result.push(...getMods());
-
   return [
     cls,
     ...getAdditional(),
