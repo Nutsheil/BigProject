@@ -1,0 +1,15 @@
+.PageError {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 15px;
+	font: var(--font-l);
+}
+
+.button {
+	padding: 10px 20px;
+	border: 1px solid black;
+	border-radius: 15px;
+}
