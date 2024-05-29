@@ -1,4 +1,4 @@
-type modsType = Record<string, boolean>;
+type modsType = Record<string, boolean | undefined | null>;
 
 export function classNames(cls: string, mods?: modsType, additional?: string | string[]): string {
   const getAdditional = (): string[] => {
