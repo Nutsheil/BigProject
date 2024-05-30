@@ -23,7 +23,7 @@ jobs:
       - name: install modules 2
         run: sudo apt-get install jq
       - name: install modules 3
-        run: jq 'del(.dependencies["loki"])' package.json > temp_package.json
+        run: jq 'del(.devDependencies["loki"])' package.json > temp_package.json
       - name: install modules 4  
         run: mv package.json original_package.json
       - name: install modules 5
