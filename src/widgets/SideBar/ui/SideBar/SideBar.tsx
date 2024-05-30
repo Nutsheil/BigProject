@@ -20,13 +20,13 @@ export const SideBar = ({ className }: ISideBar) => {
       data-testid="sidebar"
       className={classNames(classes.SideBar, { [classes.collapsed]: collapsed }, className)}
     >
-      <button
+      {/* <button
         data-testid="sidebar-toggle"
         type="button"
         onClick={onToggle}
       >
         Toggle
-      </button>
+      </button> */}
 
       <div className={classes.switchers}>
         <ThemeSwitcher />
