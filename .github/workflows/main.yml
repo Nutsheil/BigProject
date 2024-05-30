@@ -18,22 +18,22 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install modules 1
+      - name: update
         run: sudo apt-get update
-      - name: install modules 2
+      - name: install jq
         run: sudo apt-get install jq
-      - name: install modules 3
+      - name: remove loki from devDependencies in temp package file
         run: jq 'del(.devDependencies["loki"])' package.json > temp_package.json
-      - name: install modules 4  
+      - name: rename package.json to original_package.json 
         run: mv package.json original_package.json
-      - name: install modules 5
+      - name: rename temp_package.json to package.json 
         run: mv temp_package.json package.json
-      - name: install modules 6
+      - name: install modules without loki
         run: npm install
-      - name: install modules 7
+      - name: rename original_package.json to package.json
         run: mv original_package.json package.json
-      - name: install modules 8
-        run: npm install loki --force
+      - name: install loki with force flag
+        run: npm install -D loki --force
       - name: build production project
         run: npm run build:prod
       - name: linting typescript
