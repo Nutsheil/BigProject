@@ -1,7 +1,13 @@
 import { useState } from 'react';
-import { classNames } from 'shared/lib/classNames';
+import { useTranslation } from 'react-i18next';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
+import { classNames } from 'shared/lib/classNames';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
+import { routePaths } from 'shared/config/routeConfig';
+import MainIcon from 'shared/assets/icons/main.svg';
+import AboutIcon from 'shared/assets/icons/about.svg';
 import classes from './SideBar.module.scss';
 
 interface ISideBar {
@@ -9,6 +15,8 @@ interface ISideBar {
 }
 
 export const SideBar = ({ className }: ISideBar) => {
+  const { t } = useTranslation();
+
   const [collapsed, setCollapsed] = useState(false);
 
   const onToggle = () => {
@@ -20,17 +28,43 @@ export const SideBar = ({ className }: ISideBar) => {
       data-testid="sidebar"
       className={classNames(classes.SideBar, { [classes.collapsed]: collapsed }, className)}
     >
-      <button
+      <Button
         data-testid="sidebar-toggle"
-        type="button"
         onClick={onToggle}
+        className={classes.collapseBtn}
+        theme={ButtonTheme.BACKGROUND_INVERTED}
+        size={ButtonSize.L}
+        squared
       >
-        -
-      </button>
+        {collapsed ? '>' : '<'}
+      </Button>
+
+      <div className={classes.items}>
+        <AppLink
+          theme={AppLinkTheme.SECONDARY}
+          to={routePaths.main}
+          className={classes.item}
+        >
+          <MainIcon className={classes.icon} />
+          <span className={classes.link}>
+            {t('Главная')}
+          </span>
+        </AppLink>
+        <AppLink
+          theme={AppLinkTheme.SECONDARY}
+          to={routePaths.about}
+          className={classes.item}
+        >
+          <AboutIcon className={classes.icon} />
+          <span className={classes.link}>
+            {t('О сайте')}
+          </span>
+        </AppLink>
+      </div>
 
       <div className={classes.switchers}>
         <ThemeSwitcher />
-        <LangSwitcher className={classes.lang} />
+        <LangSwitcher className={classes.lang} short={collapsed} />
       </div>
     </div>
   );

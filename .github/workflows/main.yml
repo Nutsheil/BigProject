@@ -18,32 +18,46 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: update
-        run: sudo apt-get update
-      - name: install jq
-        run: sudo apt-get install jq
-      - name: remove loki from devDependencies in temp package file
-        run: jq 'del(.devDependencies["loki"])' package.json > temp_package.json
-      - name: rename package.json to original_package.json 
-        run: mv package.json original_package.json
-      - name: rename temp_package.json to package.json 
-        run: mv temp_package.json package.json
-      - name: install modules without loki
-        run: npm install
-      - name: rename original_package.json to package.json
-        run: mv original_package.json package.json
-      - name: install loki with force flag
-        run: npm install -D loki --force
-      - name: build production project
+      - name: Install packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install jq
+          jq 'del(.devDependencies["loki"])' package.json > temp_package.json
+          mv package.json original_package.json
+          mv temp_package.json package.json
+          npm install
+          mv original_package.json package.json
+          npm install -D loki --force
+      # - name: Update
+      #   run: sudo apt-get update
+      # - name: Install jq
+      #   run: sudo apt-get install jq
+      # - name: Remove loki from devDependencies in temp package file
+      #   run: jq 'del(.devDependencies["loki"])' package.json > temp_package.json
+      # - name: Rename package.json to original_package.json 
+      #   run: mv package.json original_package.json
+      # - name: rename temp_package.json to package.json 
+      #   run: mv temp_package.json package.json
+      # - name: Install modules without loki
+      #   run: npm install
+      # - name: Rename original_package.json to package.json
+      #   run: mv original_package.json package.json
+      # - name: Install loki with force flag
+      #   run: npm install -D loki --force
+      - name: Build production project
         run: npm run build:prod
-      - name: linting typescript
+        if: always()
+      - name: Linting typescript
         run: npm run lint:ts
-      - name: linting css
+        if: always()
+      - name: Linting css
         run: npm run lint:scss
-      - name: unit testing
+        if: always()
+      - name: Unit testing
         run: npm run test:unit
+        if: always()
       # - name: build storybook
-        # run: npm run storybook:build
+      #   run: npm run storybook:build
       # - name: screenshot testing
-        # run: npm run test:ui:ci
+      #   run: npm run test:ui:ci
 
