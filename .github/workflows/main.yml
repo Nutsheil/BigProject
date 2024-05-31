@@ -20,15 +20,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install packages
         run: npm install
-        # run: |
-        #   sudo apt-get update
-        #   sudo apt-get install jq
-        #   jq 'del(.devDependencies["loki"])' package.json > temp_package.json
-        #   mv package.json original_package.json
-        #   mv temp_package.json package.json
-        #   npm install
-        #   mv original_package.json package.json
-        #   npm install -D loki --force
       - name: Build production project
         run: npm run build:prod
         if: always()
@@ -41,8 +32,10 @@ jobs:
       - name: Unit testing
         run: npm run test:unit
         if: always()
-      # - name: build storybook
-      #   run: npm run storybook:build
-      # - name: screenshot testing
-      #   run: npm run test:ui:ci
+      - name: Build storybook
+        run: npm run storybook:build
+        if: always()
+      - name: Screenshot testing
+        run: npm run test:ui:ci
+        if: always()
 
