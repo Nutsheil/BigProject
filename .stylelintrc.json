@@ -1,9 +1,8 @@
 {
-  "extends": "stylelint-config-standard-scss",
-	"rules": {
-		"selector-class-pattern": null,
-		"keyframes-name-pattern": null,
-		"indentation": "tab",
-		"number-max-precision": null
-	}
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier-scss", "stylelint-config-recess-order"],
+  "rules": {
+    "selector-class-pattern": null,
+    "keyframes-name-pattern": null,
+    "number-max-precision": null
+  }
 }
