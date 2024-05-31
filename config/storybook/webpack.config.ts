@@ -3,7 +3,7 @@ import webpack, { RuleSetRule } from 'webpack';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { IBuildPaths } from '../build/types/config';
 
-export default ({ config }: {config: webpack.Configuration}) => {
+export default ({ config }: { config: webpack.Configuration }) => {
   const paths: IBuildPaths = {
     build: '',
     html: '',

@@ -4,9 +4,9 @@ import { MainPage } from 'pages/MainPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 
 export enum AppRoutes {
-	MAIN = 'main',
-	ABOUT = 'about',
-  NOT_FOUND = 'not_found'
+  MAIN = 'main',
+  ABOUT = 'about',
+  NOT_FOUND = 'not_found',
 }
 
 export const routePaths: Record<AppRoutes, string> = {

@@ -11,7 +11,7 @@ import AboutIcon from 'shared/assets/icons/about.svg';
 import classes from './SideBar.module.scss';
 
 interface ISideBar {
-	className?: string;
+  className?: string;
 }
 
 export const SideBar = ({ className }: ISideBar) => {
@@ -20,16 +20,13 @@ export const SideBar = ({ className }: ISideBar) => {
   const [collapsed, setCollapsed] = useState(false);
 
   const onToggle = () => {
-    setCollapsed((prev) => !prev);
+    setCollapsed(prev => !prev);
   };
 
   return (
-    <div
-      data-testid="sidebar"
-      className={classNames(classes.SideBar, { [classes.collapsed]: collapsed }, className)}
-    >
+    <div data-testid='sidebar' className={classNames(classes.SideBar, { [classes.collapsed]: collapsed }, className)}>
       <Button
-        data-testid="sidebar-toggle"
+        data-testid='sidebar-toggle'
         onClick={onToggle}
         className={classes.collapseBtn}
         theme={ButtonTheme.BACKGROUND_INVERTED}
@@ -40,25 +37,13 @@ export const SideBar = ({ className }: ISideBar) => {
       </Button>
 
       <div className={classes.items}>
-        <AppLink
-          theme={AppLinkTheme.SECONDARY}
-          to={routePaths.main}
-          className={classes.item}
-        >
+        <AppLink theme={AppLinkTheme.SECONDARY} to={routePaths.main} className={classes.item}>
           <MainIcon className={classes.icon} />
-          <span className={classes.link}>
-            {t('Главная')}
-          </span>
+          <span className={classes.link}>{t('Главная')}</span>
         </AppLink>
-        <AppLink
-          theme={AppLinkTheme.SECONDARY}
-          to={routePaths.about}
-          className={classes.item}
-        >
+        <AppLink theme={AppLinkTheme.SECONDARY} to={routePaths.about} className={classes.item}>
           <AboutIcon className={classes.icon} />
-          <span className={classes.link}>
-            {t('О сайте')}
-          </span>
+          <span className={classes.link}>{t('О сайте')}</span>
         </AppLink>
       </div>
 

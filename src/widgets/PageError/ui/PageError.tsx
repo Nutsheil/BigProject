@@ -12,7 +12,9 @@ export const PageError = () => {
   return (
     <div className={classes.PageError}>
       {t('Произошла непредвиденная ошибка')}
-      <Button onClick={reloadPage} className={classes.button}>{t('Обновить страницу')}</Button>
+      <Button onClick={reloadPage} className={classes.button}>
+        {t('Обновить страницу')}
+      </Button>
     </div>
   );
 };

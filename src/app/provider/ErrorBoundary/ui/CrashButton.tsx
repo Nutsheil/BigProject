@@ -13,9 +13,5 @@ export const CrashButton = () => {
     if (error) throw new Error();
   }, [error]);
 
-  return (
-    <Button onClick={crash}>
-      {t('Crash this')}
-    </Button>
-  );
+  return <Button onClick={crash}>{t('Crash this')}</Button>;
 };

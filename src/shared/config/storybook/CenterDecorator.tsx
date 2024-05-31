@@ -9,7 +9,7 @@ const styles: CSSProperties = {
   justifyContent: 'center',
 };
 
-export const CenterDecorator: Decorator = (Story) => (
+export const CenterDecorator: Decorator = Story => (
   <div style={styles}>
     <Story />
   </div>

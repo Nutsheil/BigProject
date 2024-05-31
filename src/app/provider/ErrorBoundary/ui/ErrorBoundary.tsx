@@ -2,11 +2,11 @@ import React, { ErrorInfo, ReactNode, Suspense } from 'react';
 import { PageError } from 'widgets/PageError';
 
 interface IErrorBoundary {
-	children: ReactNode;
+  children: ReactNode;
 }
 
 interface IErrorBoundaryState {
-	hasError: boolean;
+  hasError: boolean;
 }
 
 class ErrorBoundary extends React.Component<IErrorBoundary, IErrorBoundaryState> {
@@ -30,7 +30,7 @@ class ErrorBoundary extends React.Component<IErrorBoundary, IErrorBoundaryState>
     const { children } = this.props;
     if (hasError) {
       return (
-        <Suspense fallback="">
+        <Suspense fallback=''>
           <PageError />
         </Suspense>
       );

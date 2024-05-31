@@ -6,7 +6,7 @@ import DarkTheme from 'shared/assets/icons/theme-dark.svg';
 import classes from './ThemeSwitcher.module.scss';
 
 interface IThemeSwitcher {
-	className?: string;
+  className?: string;
 }
 
 export const ThemeSwitcher = ({ className }: IThemeSwitcher) => {

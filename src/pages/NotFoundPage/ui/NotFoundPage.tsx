@@ -4,9 +4,5 @@ import classes from './NotFoundPage.module.scss';
 export const NotFoundPage = () => {
   const { t } = useTranslation();
 
-  return (
-    <div className={classes.NotFoundPage}>
-      {t('Страница не найдена')}
-    </div>
-  );
+  return <div className={classes.NotFoundPage}>{t('Страница не найдена')}</div>;
 };

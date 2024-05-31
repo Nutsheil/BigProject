@@ -37,6 +37,7 @@ module.exports = {
         ignoreUrls: true,
       },
     ],
+    // 'react/jsx-max-props-per-line': [2, { maximum: 1 }],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     // 'no-unused-vars': 'warn',
