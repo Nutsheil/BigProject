@@ -19,31 +19,16 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install packages
-        run: |
-          sudo apt-get update
-          sudo apt-get install jq
-          jq 'del(.devDependencies["loki"])' package.json > temp_package.json
-          mv package.json original_package.json
-          mv temp_package.json package.json
-          npm install
-          mv original_package.json package.json
-          npm install -D loki --force
-      # - name: Update
-      #   run: sudo apt-get update
-      # - name: Install jq
-      #   run: sudo apt-get install jq
-      # - name: Remove loki from devDependencies in temp package file
-      #   run: jq 'del(.devDependencies["loki"])' package.json > temp_package.json
-      # - name: Rename package.json to original_package.json 
-      #   run: mv package.json original_package.json
-      # - name: rename temp_package.json to package.json 
-      #   run: mv temp_package.json package.json
-      # - name: Install modules without loki
-      #   run: npm install
-      # - name: Rename original_package.json to package.json
-      #   run: mv original_package.json package.json
-      # - name: Install loki with force flag
-      #   run: npm install -D loki --force
+        run: npm install
+        # run: |
+        #   sudo apt-get update
+        #   sudo apt-get install jq
+        #   jq 'del(.devDependencies["loki"])' package.json > temp_package.json
+        #   mv package.json original_package.json
+        #   mv temp_package.json package.json
+        #   npm install
+        #   mv original_package.json package.json
+        #   npm install -D loki --force
       - name: Build production project
         run: npm run build:prod
         if: always()
