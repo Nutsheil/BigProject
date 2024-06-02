@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { CenterDecorator, ThemeDecorator } from 'shared/config/storybook';
 import { Theme } from 'app/provider/ThemeProvider';
 import { ThemeSwitcher } from './ThemeSwitcher';

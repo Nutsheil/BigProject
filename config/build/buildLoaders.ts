@@ -1,5 +1,5 @@
-import { RuleSetRule } from 'webpack';
-import { IBuildOptions } from './types/config';
+import type { RuleSetRule } from 'webpack';
+import type { IBuildOptions } from './types/config';
 import { buildCssLoader } from './loaders/buildCssLoader';
 
 export function buildLoaders({ isDev }: IBuildOptions): RuleSetRule[] {

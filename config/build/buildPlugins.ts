@@ -1,10 +1,11 @@
-import {
-  WebpackPluginInstance, ProgressPlugin, DefinePlugin, HotModuleReplacementPlugin,
+import type {
+  WebpackPluginInstance} from 'webpack';
+import { ProgressPlugin, DefinePlugin, HotModuleReplacementPlugin,
 } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import { IBuildOptions } from './types/config';
+import type { IBuildOptions } from './types/config';
 
 export function buildPlugins({ paths, isDev }: IBuildOptions): WebpackPluginInstance[] {
   const plugins: WebpackPluginInstance[] = [

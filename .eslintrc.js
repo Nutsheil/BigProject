@@ -5,11 +5,14 @@ module.exports = {
     jest: true,
   },
   extends: [
-    'plugin:react/recommended',
     'airbnb',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:i18next/recommended',
     'plugin:storybook/recommended',
     'plugin:prettier/recommended',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -27,8 +30,25 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
-    'no-tabs': ['error', { allowIndentationTabs: true }],
+
+    // 'react/jsx-max-props-per-line': [2, { maximum: 1 }],
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
+    'react/require-default-props': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/function-component-definition': 'off',
+
+    // 'no-unused-vars': 'warn',
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'no-underscore-dangle': 'off',
+    'no-restricted-exports': 'off',
+    'no-restricted-globals': 'off',
+    'no-unused-vars': 'off',
+    'no-shadow': 'off',
+    'no-tabs': ['error', { allowIndentationTabs: true }],
     'max-len': [
       'warn',
       {
@@ -37,22 +57,18 @@ module.exports = {
         ignoreUrls: true,
       },
     ],
-    // 'react/jsx-max-props-per-line': [2, { maximum: 1 }],
-    'import/no-unresolved': 'off',
-    'import/prefer-default-export': 'off',
-    // 'no-unused-vars': 'warn',
-    'react/require-default-props': 'off',
-    'react/react-in-jsx-scope': 'off',
-    'react/jsx-props-no-spreading': 'off',
-    'react/function-component-definition': 'off',
-    'no-shadow': 'off',
-    'import/extensions': 'off',
-    'import/no-extraneous-dependencies': 'off',
-    'no-underscore-dangle': 'off',
-    'no-restricted-exports': 'off',
-    'no-restricted-globals': 'off',
-    'no-unused-vars': 'off',
+
     '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/ban-ts-comment': 'warn',
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      {
+        prefer: 'type-imports',
+        // fixStyle: 'separate-type-imports',
+        // disallowTypeAnnotations: false,
+      },
+    ],
+
     'i18next/no-literal-string': [
       'error',
       {

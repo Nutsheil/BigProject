@@ -1,5 +1,5 @@
-import { CSSProperties } from 'react';
-import { Decorator } from '@storybook/react';
+import type { CSSProperties } from 'react';
+import type { Decorator } from '@storybook/react';
 
 const styles: CSSProperties = {
   width: '100%',

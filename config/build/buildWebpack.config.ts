@@ -1,8 +1,8 @@
-import { Configuration } from 'webpack';
+import type { Configuration } from 'webpack';
 import { buildLoaders } from './buildLoaders';
 import { buildResolvers } from './buildResolvers';
 import { buildPlugins } from './buildPlugins';
-import { IBuildOptions } from './types/config';
+import type { IBuildOptions } from './types/config';
 import { buildDevServer } from './buildDevServer';
 
 export function buildWebpackConfig(options: IBuildOptions): Configuration {
