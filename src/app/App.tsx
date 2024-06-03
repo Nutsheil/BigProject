@@ -4,7 +4,6 @@ import { classNames } from 'shared/lib/classNames';
 import { NavBar } from 'widgets/NavBar';
 import { useTheme } from './provider/ThemeProvider';
 import { AppRouter } from './provider/router';
-import './styles/index.scss';
 
 const App = () => {
   const { theme } = useTheme();

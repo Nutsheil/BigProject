@@ -1,6 +1,6 @@
-type modsType = Record<string, boolean | undefined | null>;
+export type Mods = Record<string, boolean | undefined | null>;
 
-export function classNames(cls: string, mods?: modsType, additional?: string | string[]): string {
+export function classNames(cls: string, mods?: Mods, additional?: string | string[]): string {
   const getAdditional = (): string[] => {
     if (!additional) return [];
     if (typeof additional === 'string') return [additional];

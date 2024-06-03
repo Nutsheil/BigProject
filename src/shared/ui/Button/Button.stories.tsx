@@ -27,6 +27,14 @@ export const Clear: Story = {
   decorators: [CenterDecorator],
 };
 
+export const ClearInverted: Story = {
+  args: {
+    children: 'Button',
+    theme: ButtonTheme.CLEAR_INVERTED,
+  },
+  decorators: [CenterDecorator],
+};
+
 export const Outline: Story = {
   args: {
     children: 'Button',
@@ -97,6 +105,14 @@ export const ClearDark: Story = {
   args: {
     children: 'Button',
     theme: ButtonTheme.CLEAR,
+  },
+  decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
+};
+
+export const ClearInvertedDark: Story = {
+  args: {
+    children: 'Button',
+    theme: ButtonTheme.CLEAR_INVERTED,
   },
   decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
 };
