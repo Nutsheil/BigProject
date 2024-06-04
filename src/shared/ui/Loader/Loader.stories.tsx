@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { CenterDecorator, ThemeDecorator } from 'shared/config/storybook';
-import { Theme } from 'app/provider/ThemeProvider';
+import { Theme } from 'app/providers/ThemeProvider';
 import { Loader } from './Loader';
 
 type Story = StoryObj<typeof Loader>;

@@ -1,4 +1,4 @@
-import { useTheme } from 'app/provider/ThemeProvider';
+import { useTheme } from 'app/providers/ThemeProvider';
 import type { ReactNode } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { classNames } from 'shared/lib/classNames';

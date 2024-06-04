@@ -1,4 +1,4 @@
-import { CrashButton } from 'app/provider/ErrorBoundary';
+import { Counter } from 'entities/Counter';
 import { useTranslation } from 'react-i18next';
 
 const MainPage = () => {
@@ -6,8 +6,8 @@ const MainPage = () => {
 
   return (
     <div>
-      {t('Главная страница')}
-      <CrashButton />
+      <h1 style={{ textAlign: 'center' }}>{t('Главная страница')}</h1>
+      <Counter />
     </div>
   );
 };

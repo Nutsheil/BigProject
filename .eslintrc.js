@@ -51,6 +51,7 @@ module.exports = {
     'no-restricted-globals': 'off',
     'no-unused-vars': 'off',
     'no-shadow': 'off',
+    'no-param-reassign': 'off',
     'no-tabs': ['error', { allowIndentationTabs: true }],
     'max-len': [
       'warn',
