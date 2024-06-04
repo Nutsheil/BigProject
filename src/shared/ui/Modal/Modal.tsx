@@ -1,8 +1,7 @@
-import { useTheme } from 'app/providers/ThemeProvider';
 import type { ReactNode } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { classNames } from 'shared/lib/classNames';
-import { Portal } from '../Portal';
+import { Portal } from 'shared/ui/Portal';
 import classes from './Modal.module.scss';
 
 interface IModal {
@@ -16,8 +15,6 @@ const ANIMATION_DELAY = 300;
 
 export const Modal = (props: IModal) => {
   const { isOpen, onClose, children, className } = props;
-
-  const { theme } = useTheme();
 
   const [isClosing, setIsClosing] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
@@ -59,7 +56,7 @@ export const Modal = (props: IModal) => {
 
   return (
     <Portal>
-      <div className={classNames(classes.Modal, mods, [className, classes[theme]])}>
+      <div className={classNames(classes.Modal, mods, className)}>
         <div className={classes.overlay} onClick={closeHandler}>
           <div className={classes.content} onClick={e => e.stopPropagation()}>
             {children}

@@ -1,15 +1,12 @@
 import { Suspense } from 'react';
+import { NavBar } from 'widgets/NavBar';
 import { SideBar } from 'widgets/SideBar';
 import { classNames } from 'shared/lib/classNames';
-import { NavBar } from 'widgets/NavBar';
-import { useTheme } from './providers/ThemeProvider';
 import { AppRouter } from './providers/router';
 
-const App = () => {
-  const { theme } = useTheme();
-
+export const App = () => {
   return (
-    <div className={classNames('app', {}, theme)}>
+    <div className={classNames('app')}>
       <Suspense fallback=''>
         <NavBar />
         <div className='content-page'>
@@ -20,5 +17,3 @@ const App = () => {
     </div>
   );
 };
-
-export { App };
