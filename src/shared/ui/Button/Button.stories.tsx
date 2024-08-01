@@ -175,3 +175,12 @@ export const SizeXLDark: Story = {
   },
   decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
 };
+
+export const Disabled: Story = {
+  args: {
+    children: 'Button',
+    theme: ButtonTheme.OUTLINE,
+    disabled: true,
+  },
+  decorators: [CenterDecorator],
+};

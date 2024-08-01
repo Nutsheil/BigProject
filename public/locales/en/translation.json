@@ -6,6 +6,10 @@
   "Страница не найдена": "Page not found",
   "Произошла непредвиденная ошибка": "An unexpected error occurred",
   "Обновить страницу": "Reload page",
+  "Войти": "Login",
+  "Выйти": "Logout",
   "Логин": "Username",
-  "Пароль": "Password"
+  "Пароль": "Password",
+  "Форма авторизации": "Authorization form",
+  "Неправильный логин иои пароль": "Incorrect username or password"
 }
