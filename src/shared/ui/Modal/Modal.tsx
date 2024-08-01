@@ -8,15 +8,17 @@ interface IModal {
   isOpen: boolean;
   onClose: () => void;
   children: ReactNode;
+  lazy?: boolean;
   className?: string;
 }
 
 const ANIMATION_DELAY = 300;
 
 export const Modal = (props: IModal) => {
-  const { isOpen, onClose, children, className } = props;
+  const { isOpen, onClose, children, lazy, className } = props;
 
   const [isClosing, setIsClosing] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
   const closeHandler = useCallback(() => {
@@ -39,6 +41,10 @@ export const Modal = (props: IModal) => {
   );
 
   useEffect(() => {
+    if (isOpen) setIsMounted(true);
+  }, [isOpen]);
+
+  useEffect(() => {
     if (isOpen) {
       window.addEventListener('keydown', onKeyDown);
     }
@@ -53,6 +59,8 @@ export const Modal = (props: IModal) => {
     [classes.opened]: isOpen,
     [classes.isClosing]: isClosing,
   };
+
+  if (lazy && !isMounted) return null;
 
   return (
     <Portal>
