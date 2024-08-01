@@ -1,8 +1,8 @@
 .SideBar {
-	height: calc(100vh - var(--navbar-height));
-	width: var(--sidebar-width);
-	background: var(--inverted-bg-color);
 	position: relative;
+	width: var(--sidebar-width);
+	height: calc(100vh - var(--navbar-height));
+	background: var(--inverted-bg-color);
 	transition: width 0.3s;
 }
 
@@ -10,8 +10,8 @@
 	position: absolute;
 	bottom: 20px;
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 	width: 100%;
 }
 
@@ -26,16 +26,16 @@
 }
 
 .items {
-	margin-top: 20px;
-	margin-left: 30px;
 	display: flex;
 	flex-direction: column;
+	margin-top: 20px;
+	margin-left: 30px;
 }
 
 .item {
-	margin-top: 10px;
 	display: flex;
 	align-items: center;
+	margin-top: 10px;
 }
 
 .link {
@@ -59,8 +59,8 @@
 	}
 
 	.link {
+		width: 0;
 		opacity: 0;
 		transition: 0.2s opacity;
-		width: 0;
 	}
 }
