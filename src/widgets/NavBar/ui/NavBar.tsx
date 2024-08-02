@@ -1,10 +1,10 @@
 import { useCallback, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames';
-import { LoginModal } from 'features/AuthByUsername';
-import { Button, ButtonTheme } from 'shared/ui/Button';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { getUserAuthData, userActions } from 'entities/User';
+import { LoginModal } from 'features/AuthByUsername';
+import { classNames } from 'shared/lib/classNames';
+import { Button, ButtonTheme } from 'shared/ui/Button';
 import classes from './NavBar.module.scss';
 
 interface INavBar {
@@ -44,7 +44,7 @@ export const NavBar = ({ className }: INavBar) => {
       <Button theme={ButtonTheme.CLEAR_INVERTED} className={classes.links} onClick={onOpenAuthModal}>
         {t('Войти')}
       </Button>
-      <LoginModal isOpen={isAuthModalOpen} onClose={onCloseAuthModal} />
+      {isAuthModalOpen && <LoginModal isOpen={isAuthModalOpen} onClose={onCloseAuthModal} />}
     </div>
   );
 };
