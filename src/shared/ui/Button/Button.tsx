@@ -1,4 +1,5 @@
-import type { ButtonHTMLAttributes, FC } from 'react';
+import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import { memo } from 'react';
 import type { Mods } from 'shared/lib/classNames';
 import { classNames } from 'shared/lib/classNames';
 import classes from './Button.module.scss';
@@ -12,9 +13,10 @@ interface IButton2 extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: sizeType;
   squared?: boolean;
   disabled?: boolean;
+  children?: ReactNode;
 }
 
-export const Button2: FC<IButton2> = props => {
+export const Button2 = memo((props: IButton2) => {
   const { className, theme, size = 'm', squared, disabled, children, ...otherProps } = props;
 
   const mods: Mods = {
@@ -34,7 +36,8 @@ export const Button2: FC<IButton2> = props => {
       {children}
     </button>
   );
-};
+});
+Button2.displayName = 'Button2';
 
 export enum ButtonTheme {
   OUTLINE = 'outline',
@@ -56,9 +59,10 @@ interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   squared?: boolean;
   disabled?: boolean;
+  children?: ReactNode;
 }
 
-export const Button: FC<IButton> = props => {
+export const Button = memo((props: IButton) => {
   const { className, theme, size = ButtonSize.M, squared, disabled, children, ...otherProps } = props;
 
   const mods: Record<string, boolean> = {
@@ -73,4 +77,5 @@ export const Button: FC<IButton> = props => {
       {children}
     </button>
   );
-};
+});
+Button.displayName = 'Button';

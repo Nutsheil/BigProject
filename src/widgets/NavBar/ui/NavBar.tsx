@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { getUserAuthData, userActions } from 'entities/User';
@@ -11,7 +11,7 @@ interface INavBar {
   className?: string;
 }
 
-export const NavBar = ({ className }: INavBar) => {
+export const NavBar = memo(({ className }: INavBar) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -47,4 +47,5 @@ export const NavBar = ({ className }: INavBar) => {
       {isAuthModalOpen && <LoginModal isOpen={isAuthModalOpen} onClose={onCloseAuthModal} />}
     </div>
   );
-};
+});
+NavBar.displayName = 'NavBar';

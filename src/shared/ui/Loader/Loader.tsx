@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames';
 import classes from './Loader.module.scss';
 
@@ -5,7 +6,7 @@ interface ILoader {
   className?: string;
 }
 
-export const Loader = ({ className }: ILoader) => (
+export const Loader = memo(({ className }: ILoader) => (
   <div className={classNames(classes.Loader, {}, className)}>
     <div />
     <div />
@@ -16,4 +17,5 @@ export const Loader = ({ className }: ILoader) => (
     <div />
     <div />
   </div>
-);
+));
+Loader.displayName = 'Loader';
