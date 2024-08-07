@@ -17,7 +17,7 @@ interface IButton2 extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button2 = memo((props: IButton2) => {
-  const { className, theme, size = 'm', squared, disabled, children, ...otherProps } = props;
+  const { className, theme = 'outline', size = 'm', squared, disabled, children, ...otherProps } = props;
 
   const mods: Mods = {
     [classes.square]: squared,
@@ -63,9 +63,17 @@ interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = memo((props: IButton) => {
-  const { className, theme, size = ButtonSize.M, squared, disabled, children, ...otherProps } = props;
+  const {
+    className,
+    theme = ButtonTheme.OUTLINE,
+    size = ButtonSize.M,
+    squared,
+    disabled,
+    children,
+    ...otherProps
+  } = props;
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [classes.square]: squared,
     [classes[theme]]: true,
     [classes[size]]: true,

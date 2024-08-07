@@ -16,12 +16,12 @@ export function useTheme(): ITheme {
 
   const toggleTheme = () => {
     const newtTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
-    setTheme(newtTheme);
+    setTheme?.(newtTheme);
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newtTheme);
   };
 
   return {
-    theme,
+    theme: Theme.LIGHT,
     toggleTheme,
   };
 }
