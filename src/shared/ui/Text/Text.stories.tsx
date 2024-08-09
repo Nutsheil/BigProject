@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { CenterDecorator, ThemeDecorator } from 'shared/config/storybook';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Text, TextTheme } from './Text';
+import { Text } from './Text';
 
 type Story = StoryObj<typeof Text>;
 
@@ -17,18 +17,28 @@ export const Light: Story = {
   decorators: [CenterDecorator],
 };
 
+export const Center: Story = {
+  args: { title: 'title light', text: 'text light', align: 'center' },
+  decorators: [CenterDecorator],
+};
+
+export const Right: Story = {
+  args: { title: 'title light', text: 'text light', align: 'right' },
+  decorators: [CenterDecorator],
+};
+
 export const Dark: Story = {
   args: { title: 'title dark', text: 'text dark' },
   decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
 };
 
 export const ErrorLight: Story = {
-  args: { title: 'error light', text: 'text light', theme: TextTheme.ERROR },
+  args: { title: 'error light', text: 'text light', theme: 'error' },
   decorators: [CenterDecorator],
 };
 
 export const ErrorDark: Story = {
-  args: { title: 'error dark', text: 'text dark', theme: TextTheme.ERROR },
+  args: { title: 'error dark', text: 'text dark', theme: 'error' },
   decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
 };
 

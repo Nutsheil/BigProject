@@ -12,7 +12,7 @@
     fill: var(--inverted-primary-color);
   }
 
-  .collapsed {
+  &.collapsed {
     .link {
       width: 0;
       opacity: 0;

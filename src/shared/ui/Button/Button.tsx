@@ -41,6 +41,7 @@ Button2.displayName = 'Button2';
 
 export enum ButtonTheme {
   OUTLINE = 'outline',
+  OUTLINE_RED = 'outlineRed',
   CLEAR = 'clear',
   CLEAR_INVERTED = 'clearInverted',
   BACKGROUND = 'background',

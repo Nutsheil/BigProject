@@ -1,4 +1,4 @@
-.title {
+/* .title {
   font: var(--font-l);
   color: var(--primary-color);
 }
@@ -15,5 +15,40 @@
 
   .text {
     color: var(--red-dark-color);
+  }
+} */
+
+.Text {
+  .title {
+    font: var(--font-l);
+  }
+
+  .text {
+    font: var(--font-m);
+    color: var(--secondary-color);
+  }
+
+  // Text alignment
+  &.left {
+    text-align: left;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.right {
+    text-align: right;
+  }
+
+  // Text theme
+  &.error {
+    .title {
+      color: var(--red-light-color);
+    }
+
+    .text {
+      color: var(--red-dark-color);
+    }
   }
 }

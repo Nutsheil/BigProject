@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
-import { Text, TextTheme } from 'shared/ui/Text';
+import { Text } from 'shared/ui/Text';
 import type { ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
@@ -56,7 +56,7 @@ const LoginForm = memo(({ className, onSuccess }: ILoginForm) => {
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
       <div className={classNames(classes.LoginForm, {}, className)}>
         <Text title={t('Форма авторизации')} />
-        {error && <Text theme={TextTheme.ERROR} text={t('Неправильный логин иои пароль')} />}
+        {error && <Text theme='error' text={t('Неправильный логин иои пароль')} />}
         <Input
           type='text'
           className={classes.input}
