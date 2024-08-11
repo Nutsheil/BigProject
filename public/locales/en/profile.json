@@ -12,5 +12,13 @@
   "Произошла ошибка при загрузке профиля": "There was an error loading your profile",
   "Попробуйте обновить страницу": "Try refreshing the page",
   "Отменить": "Cancel",
-  "Сохранить": "Save"
+  "Сохранить": "Save",
+  "Серверная ошибка при сохранении": "Server error while saving",
+  "Данные не указаны": "Data not specified",
+  "Имя не заполнено": "First name is not filled",
+  "Фамилия не заполнена": "Last name is not filled",
+  "Возраст не заполнен": "Age is not filled",
+  "Некорректный возраст": "Incorrect age",
+  "Город не заполнен": "City is not filled",
+  "Имя пользователя не заполнено": "Username is not filled"
 }
