@@ -1,7 +1,7 @@
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import type { StoryObj, Meta } from '@storybook/react';
 import { CenterDecorator } from 'shared/config/storybook';
-import AvatarImg from './storybook.jpg';
+import AvatarImg from 'shared/assets/tests/avatar.jpg';
 
 type Story = StoryObj<typeof Avatar>;
 
@@ -15,7 +15,7 @@ export default meta;
 
 export const Primary: Story = {
   args: {
-    size: 50,
+    size: 100,
     src: AvatarImg,
   },
   decorators: [CenterDecorator],

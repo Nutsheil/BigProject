@@ -23,10 +23,10 @@ export class TestAsyncThunk<Return, Arg, RejectValue> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   navigate: jest.MockedFn<any>;
 
-  constructor(actionCreator: ActionCreator<Return, Arg, RejectValue>) {
+  constructor(actionCreator: ActionCreator<Return, Arg, RejectValue>, state?: DeepPartial<StateSchema>) {
     this.actionCreator = actionCreator;
     this.dispatch = jest.fn();
-    this.getState = jest.fn();
+    this.getState = jest.fn(() => state as StateSchema);
 
     this.api = mockedAxios;
     this.navigate = jest.fn();

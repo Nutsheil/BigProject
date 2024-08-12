@@ -44,7 +44,9 @@ const ProfilePage = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   const onChangeFirstName = useCallback(
@@ -108,10 +110,6 @@ const ProfilePage = () => {
     },
     [dispatch],
   );
-
-  useEffect(() => {
-    dispatch(fetchProfileData());
-  }, [dispatch]);
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>

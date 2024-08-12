@@ -17,9 +17,9 @@ export const validateProfileData = (profile?: IProfile) => {
     errors.push(ValidateProfileError.MISSING_LAST_NAME);
   }
 
-  if (!age) {
+  if (age === undefined) {
     errors.push(ValidateProfileError.MISSING_AGE);
-  } else if (age < 0 || age > 100) {
+  } else if (Number.isNaN(age) || age <= 0 || age > 100 || age % 1 !== 0) {
     errors.push(ValidateProfileError.INCORRECT_AGE);
   }
 
