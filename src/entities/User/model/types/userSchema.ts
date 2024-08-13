@@ -5,4 +5,6 @@ export interface IUser {
 
 export interface UserSchema {
   authData?: IUser;
+
+  _init: boolean;
 }
