@@ -19,7 +19,7 @@ export const ThemeSwitcher = memo(({ className }: IThemeSwitcher) => {
       theme={ButtonTheme.CLEAR}
       onClick={toggleTheme}
     >
-      {theme === Theme.LIGHT ? <LightTheme /> : <DarkTheme />}
+      {theme === Theme.LIGHT || theme === Theme.PURPLE ? <LightTheme /> : <DarkTheme />}
     </Button>
   );
 });

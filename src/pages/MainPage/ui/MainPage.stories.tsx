@@ -12,10 +12,14 @@ const meta: Meta<typeof MainPage> = {
 
 export default meta;
 
-export const Light: Story = {
+export const Default: Story = {
   decorators: [StoreDecorator()],
 };
 
 export const Dark: Story = {
   decorators: [StoreDecorator(), ThemeDecorator(Theme.DARK)],
+};
+
+export const Purple: Story = {
+  decorators: [StoreDecorator(), ThemeDecorator(Theme.PURPLE)],
 };

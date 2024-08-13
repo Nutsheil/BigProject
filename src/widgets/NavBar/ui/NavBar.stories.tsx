@@ -12,7 +12,7 @@ const meta: Meta<typeof NavBar> = {
 
 export default meta;
 
-export const Light: Story = {
+export const Default: Story = {
   decorators: [StoreDecorator()],
 };
 
@@ -20,20 +20,11 @@ export const Dark: Story = {
   decorators: [StoreDecorator(), ThemeDecorator(Theme.DARK)],
 };
 
-export const LoggedLight: Story = {
-  decorators: [
-    StoreDecorator({
-      user: {
-        authData: {
-          id: '1',
-          username: 'user',
-        },
-      },
-    }),
-  ],
+export const Purple: Story = {
+  decorators: [StoreDecorator(), ThemeDecorator(Theme.PURPLE)],
 };
 
-export const LoggedDark: Story = {
+export const Logged: Story = {
   decorators: [
     StoreDecorator({
       user: {
@@ -43,6 +34,5 @@ export const LoggedDark: Story = {
         },
       },
     }),
-    ThemeDecorator(Theme.DARK),
   ],
 };

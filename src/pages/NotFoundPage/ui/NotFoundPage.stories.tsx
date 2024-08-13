@@ -12,8 +12,12 @@ const meta: Meta<typeof NotFoundPage> = {
 
 export default meta;
 
-export const Light: Story = {};
+export const Default: Story = {};
 
 export const Dark: Story = {
   decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const Purple: Story = {
+  decorators: [ThemeDecorator(Theme.PURPLE)],
 };

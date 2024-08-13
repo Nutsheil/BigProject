@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
 import { classNames } from 'shared/lib/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
+import { AppLink } from 'shared/ui/AppLink';
 import type { ISideBarItem } from '../../model/items';
 import classes from './SideBarItem.module.scss';
 
@@ -22,7 +22,7 @@ export const SideBarItem = memo((props: ISideBarItemProps) => {
 
   return (
     <AppLink
-      theme={AppLinkTheme.SECONDARY}
+      theme='secondary'
       to={item.path}
       className={classNames(classes.SideBarItem, { [classes.collapsed]: collapsed })}
     >

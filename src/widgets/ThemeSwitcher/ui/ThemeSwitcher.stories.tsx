@@ -12,10 +12,14 @@ const meta: Meta<typeof ThemeSwitcher> = {
 
 export default meta;
 
-export const Light: Story = {
+export const Default: Story = {
   decorators: [CenterDecorator],
 };
 
 export const Dark: Story = {
   decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
+};
+
+export const Purple: Story = {
+  decorators: [CenterDecorator, ThemeDecorator(Theme.PURPLE)],
 };

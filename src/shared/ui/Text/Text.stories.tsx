@@ -17,19 +17,14 @@ export const Light: Story = {
   decorators: [CenterDecorator],
 };
 
-export const Center: Story = {
-  args: { title: 'title light', text: 'text light', align: 'center' },
-  decorators: [CenterDecorator],
-};
-
-export const Right: Story = {
-  args: { title: 'title light', text: 'text light', align: 'right' },
-  decorators: [CenterDecorator],
-};
-
 export const Dark: Story = {
   args: { title: 'title dark', text: 'text dark' },
   decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
+};
+
+export const Purple: Story = {
+  args: { title: 'title purple', text: 'text purple' },
+  decorators: [CenterDecorator, ThemeDecorator(Theme.PURPLE)],
 };
 
 export const ErrorLight: Story = {
@@ -42,22 +37,27 @@ export const ErrorDark: Story = {
   decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
 };
 
-export const OnlyTitleLight: Story = {
-  args: { title: 'only title light' },
+export const ErrorPurple: Story = {
+  args: { title: 'error dark', text: 'text dark', theme: 'error' },
+  decorators: [CenterDecorator, ThemeDecorator(Theme.PURPLE)],
+};
+
+export const Center: Story = {
+  args: { title: 'title center', text: 'text center', align: 'center' },
   decorators: [CenterDecorator],
 };
 
-export const OnlyTextLight: Story = {
-  args: { text: 'only text light' },
+export const Right: Story = {
+  args: { title: 'title right', text: 'text tight', align: 'right' },
   decorators: [CenterDecorator],
 };
 
-export const OnlyTitleDark: Story = {
-  args: { title: 'only title dark' },
-  decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
+export const OnlyTitle: Story = {
+  args: { title: 'only title' },
+  decorators: [CenterDecorator],
 };
 
-export const OnlyTextDark: Story = {
-  args: { text: 'only text dark' },
-  decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
+export const OnlyText: Story = {
+  args: { text: 'only text' },
+  decorators: [CenterDecorator],
 };

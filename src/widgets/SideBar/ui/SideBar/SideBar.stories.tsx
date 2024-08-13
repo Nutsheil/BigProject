@@ -20,6 +20,10 @@ export const Dark: Story = {
   decorators: [StoreDecorator(), ThemeDecorator(Theme.DARK)],
 };
 
+export const Purple: Story = {
+  decorators: [StoreDecorator(), ThemeDecorator(Theme.PURPLE)],
+};
+
 export const Auth: Story = {
   decorators: [
     StoreDecorator({

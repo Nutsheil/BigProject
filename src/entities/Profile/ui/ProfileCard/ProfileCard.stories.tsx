@@ -27,19 +27,27 @@ const meta: Meta<typeof ProfileCard> = {
 
 export default meta;
 
-export const DefaultLight: Story = {
+export const Default: Story = {
   args: {
     readonly: true,
     data: profileData,
   },
 };
 
-export const DefaultDark: Story = {
+export const Dark: Story = {
   args: {
     readonly: true,
     data: profileData,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const Purple: Story = {
+  args: {
+    readonly: true,
+    data: profileData,
+  },
+  decorators: [ThemeDecorator(Theme.PURPLE)],
 };
 
 export const Empty: Story = {

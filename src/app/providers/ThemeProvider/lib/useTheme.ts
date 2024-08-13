@@ -15,13 +15,26 @@ export function useTheme(): ITheme {
   const { theme, setTheme } = themeContext;
 
   const toggleTheme = () => {
-    const newtTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
-    setTheme?.(newtTheme);
-    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newtTheme);
+    let newTheme: Theme;
+    switch (theme) {
+      case Theme.DARK:
+        newTheme = Theme.LIGHT;
+        break;
+      case Theme.LIGHT:
+        newTheme = Theme.PURPLE;
+        break;
+      case Theme.PURPLE:
+        newTheme = Theme.DARK;
+        break;
+      default:
+        newTheme = Theme.LIGHT;
+    }
+    setTheme(newTheme);
+    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
 
   return {
-    theme: Theme.LIGHT,
+    theme,
     toggleTheme,
   };
 }

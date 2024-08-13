@@ -27,7 +27,7 @@ const meta: Meta<typeof ProfilePage> = {
 
 export default meta;
 
-export const Light: Story = {
+export const Default: Story = {
   decorators: [
     StoreDecorator({
       profile: {
@@ -47,5 +47,17 @@ export const Dark: Story = {
       },
     }),
     ThemeDecorator(Theme.DARK),
+  ],
+};
+
+export const Purple: Story = {
+  decorators: [
+    StoreDecorator({
+      profile: {
+        form: profileData,
+        readonly: true,
+      },
+    }),
+    ThemeDecorator(Theme.PURPLE),
   ],
 };

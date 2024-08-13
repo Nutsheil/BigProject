@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { CenterDecorator, ThemeDecorator } from 'shared/config/storybook';
 import { Theme } from 'app/providers/ThemeProvider';
-import { CurrencySelect } from './CurrencySelect';
+import { LangSwitcher } from './LangSwitcher';
 
-type Story = StoryObj<typeof CurrencySelect>;
+type Story = StoryObj<typeof LangSwitcher>;
 
-const meta: Meta<typeof CurrencySelect> = {
-  title: 'entities/CurrencySelect',
-  component: CurrencySelect,
+const meta: Meta<typeof LangSwitcher> = {
+  title: 'widgets/LangSwitcher',
+  component: LangSwitcher,
 };
 
 export default meta;
 
-export const Light: Story = {
+export const Default: Story = {
   decorators: [CenterDecorator],
 };
 

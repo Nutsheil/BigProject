@@ -4,8 +4,6 @@
   border-radius: 8px;
 
   .content {
-    margin-top: 30px;
-
     .avatarWrapper {
       display: flex;
 
@@ -13,8 +11,7 @@
       align-items: center;
       justify-content: center;
       width: 100%;
-
-      /* margin-bottom: 1rem; */
+      margin-bottom: 12px;
     }
 
     .input {

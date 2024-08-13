@@ -1,7 +1,7 @@
 import type { StoryObj, Meta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { CenterDecorator, ThemeDecorator } from 'shared/config/storybook';
-import { AppLink, AppLinkTheme } from './AppLink';
+import { AppLink } from './AppLink';
 
 type Story = StoryObj<typeof AppLink>;
 
@@ -10,6 +10,7 @@ const meta: Meta<typeof AppLink> = {
   component: AppLink,
   args: {
     to: '/',
+    children: 'AppLink',
   },
 };
 
@@ -17,32 +18,42 @@ export default meta;
 
 export const Primary: Story = {
   args: {
-    children: 'AppLink',
-    theme: AppLinkTheme.PRIMARY,
+    theme: 'primary',
   },
   decorators: [CenterDecorator],
 };
 
 export const Secondary: Story = {
   args: {
-    children: 'AppLink',
-    theme: AppLinkTheme.SECONDARY,
+    theme: 'secondary',
   },
   decorators: [CenterDecorator],
 };
 
 export const PrimaryDark: Story = {
   args: {
-    children: 'AppLink',
-    theme: AppLinkTheme.PRIMARY,
+    theme: 'primary',
   },
   decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
 };
 
 export const SecondaryDark: Story = {
   args: {
-    children: 'AppLink',
-    theme: AppLinkTheme.SECONDARY,
+    theme: 'secondary',
   },
   decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
+};
+
+export const PrimaryPurple: Story = {
+  args: {
+    theme: 'primary',
+  },
+  decorators: [CenterDecorator, ThemeDecorator(Theme.PURPLE)],
+};
+
+export const SecondaryPurple: Story = {
+  args: {
+    theme: 'secondary',
+  },
+  decorators: [CenterDecorator, ThemeDecorator(Theme.PURPLE)],
 };

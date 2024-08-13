@@ -19,3 +19,7 @@ export const Light: Story = {
 export const Dark: Story = {
   decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
 };
+
+export const Purple: Story = {
+  decorators: [CenterDecorator, ThemeDecorator(Theme.PURPLE)],
+};
