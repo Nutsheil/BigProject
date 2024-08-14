@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook';
 import { Theme } from 'app/providers/ThemeProvider';
-import { NotFoundPage } from './NotFoundPage';
+import NotFoundPage from './NotFoundPage';
 
 type Story = StoryObj<typeof NotFoundPage>;
 

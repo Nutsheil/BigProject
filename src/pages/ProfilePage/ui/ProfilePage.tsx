@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import {
@@ -134,4 +134,4 @@ const ProfilePage = () => {
   );
 };
 
-export default ProfilePage;
+export default memo(ProfilePage);
