@@ -6,7 +6,7 @@ import ArticlesPage from './ArticlesPage';
 type Story = StoryObj<typeof ArticlesPage>;
 
 const meta: Meta<typeof ArticlesPage> = {
-  title: 'pages/ArticlePage',
+  title: 'pages/ArticlesPage',
   component: ArticlesPage,
 };
 

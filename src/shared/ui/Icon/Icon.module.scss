@@ -1,0 +1,13 @@
+.Icon {
+  &.fill {
+    fill: var(--primary-color);
+  }
+
+  &.stroke {
+    fill: none;
+
+    path {
+      stroke: var(--primary-color);
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook';
 import { Theme } from 'app/providers/ThemeProvider';
+import { testArticle } from 'entities/Article/model/const/testArticle';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 type Story = StoryObj<typeof ArticleDetailsPage>;
@@ -8,18 +9,17 @@ type Story = StoryObj<typeof ArticleDetailsPage>;
 const meta: Meta<typeof ArticleDetailsPage> = {
   title: 'pages/ArticleDetailsPage',
   component: ArticleDetailsPage,
+  decorators: [StoreDecorator({ articleDetails: { data: testArticle } })],
 };
 
 export default meta;
 
-export const Default: Story = {
-  decorators: [StoreDecorator()],
-};
+export const Default: Story = {};
 
 export const Dark: Story = {
-  decorators: [StoreDecorator(), ThemeDecorator(Theme.DARK)],
+  decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const Purple: Story = {
-  decorators: [StoreDecorator(), ThemeDecorator(Theme.PURPLE)],
+  decorators: [ThemeDecorator(Theme.PURPLE)],
 };

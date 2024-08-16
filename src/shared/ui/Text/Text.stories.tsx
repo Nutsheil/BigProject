@@ -42,6 +42,16 @@ export const ErrorPurple: Story = {
   decorators: [CenterDecorator, ThemeDecorator(Theme.PURPLE)],
 };
 
+export const SizeS: Story = {
+  args: { title: 'title size S', text: 'text size S', size: 's' },
+  decorators: [CenterDecorator],
+};
+
+export const SizeL: Story = {
+  args: { title: 'title size L', text: 'text size L', size: 'l' },
+  decorators: [CenterDecorator],
+};
+
 export const Center: Story = {
   args: { title: 'title center', text: 'text center', align: 'center' },
   decorators: [CenterDecorator],

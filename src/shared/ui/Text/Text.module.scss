@@ -1,30 +1,9 @@
-/* .title {
-  font: var(--font-l);
-  color: var(--primary-color);
-}
-
-.text {
-  font: var(--font-m);
-  color: var(--secondary-color);
-}
-
-.error {
-  .title {
-    color: var(--red-light-color);
-  }
-
-  .text {
-    color: var(--red-dark-color);
-  }
-} */
-
 .Text {
   .title {
-    font: var(--font-l);
+    color: var(--primary-color);
   }
 
   .text {
-    font: var(--font-m);
     color: var(--secondary-color);
   }
 
@@ -49,6 +28,37 @@
 
     .text {
       color: var(--red-dark-color);
+    }
+  }
+
+  // Text size
+  &.s {
+    .title {
+      font: var(--font-m);
+    }
+
+    .text {
+      font: var(--font-s);
+    }
+  }
+
+  &.m {
+    .title {
+      font: var(--font-l);
+    }
+
+    .text {
+      font: var(--font-m);
+    }
+  }
+
+  &.l {
+    .title {
+      font: var(--font-xl);
+    }
+
+    .text {
+      font: var(--font-l);
     }
   }
 }

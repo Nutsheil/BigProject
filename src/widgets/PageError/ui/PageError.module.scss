@@ -1,15 +1,15 @@
 .PageError {
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
-	font: var(--font-l);
-}
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font: var(--font-l);
 
-.button {
-	padding: 10px 20px;
-	border: 1px solid black;
-	border-radius: 15px;
+  .button {
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+  }
 }
